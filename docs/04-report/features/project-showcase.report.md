@@ -17,7 +17,7 @@
 
 ### 1.2 Solution Approach
 
-Next.js 15 + Tailwind CSS v4 기반 정적 포트폴리오 사이트. Deep Blue Glassmorphism 카드로 각 프로젝트의 동기(motivation), 결과(outcome), 기능(features), 기술스택(techStack)을 스토리텔링하는 구조.
+Next.js 16 + Tailwind CSS v4 기반 정적 포트폴리오 사이트. Deep Blue Glassmorphism 카드로 각 프로젝트의 동기(motivation), 결과(outcome), 기능(features), 기술스택(techStack)을 스토리텔링하는 구조.
 
 ### 1.3 Value Delivered
 
@@ -44,7 +44,7 @@ Next.js 15 + Tailwind CSS v4 기반 정적 포트폴리오 사이트. Deep Blue 
 - typecheck + build 에러 0
 
 **Key Decisions**:
-- Framework: Next.js 15 (App Router)
+- Framework: Next.js 16 (App Router)
 - Styling: Tailwind CSS v4 + shadcn/ui
 - Data: Mock JSON (정적 우선)
 - Architecture: Server Component 기본, ThemeToggle만 Client

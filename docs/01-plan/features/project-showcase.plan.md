@@ -102,7 +102,7 @@
 
 | Decision  | Selected                    | Rationale                     |
 | --------- | --------------------------- | ----------------------------- |
-| Framework | Next.js 15 (App Router)     | SSR/SSG + SEO                 |
+| Framework | Next.js 16 (App Router)     | SSR/SSG + SEO                 |
 | Styling   | Tailwind CSS v4 + shadcn/ui | Glassmorphism 구현 용이       |
 | Data      | Mock JSON (정적)            | 우선 프로토타입, 추후 DB 전환 |
 

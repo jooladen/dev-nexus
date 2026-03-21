@@ -1,6 +1,6 @@
 # dev-nexus
 
-Next.js 15 (App Router) + TypeScript + Tailwind CSS v4 + shadcn/ui
+Next.js 16 (App Router) + TypeScript + Tailwind CSS v4 + shadcn/ui
 
 ## Commands
 

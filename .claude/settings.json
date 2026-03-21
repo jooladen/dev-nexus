@@ -26,7 +26,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo '## Context Recovery\\n프로젝트: dev-nexus (Next.js 15 + Tailwind + shadcn/ui)\\n워크플로우: typecheck → lint → build\\n규칙: components/ui/ 수정 금지, Server Component 기본, 다크모드 필수\\nCLAUDE.md와 .claude/docs/ 참조할 것'"
+            "command": "echo '## Context Recovery\\n프로젝트: dev-nexus (Next.js 16 + Tailwind + shadcn/ui)\\n워크플로우: typecheck → lint → build\\n규칙: components/ui/ 수정 금지, Server Component 기본, 다크모드 필수\\nCLAUDE.md와 .claude/docs/ 참조할 것'"
           }
         ]
       }
