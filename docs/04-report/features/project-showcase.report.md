@@ -37,7 +37,7 @@ Next.js 16 + Tailwind CSS v4 기반 정적 포트폴리오 사이트. Deep Blue 
 **Document**: `docs/01-plan/features/project-showcase.plan.md`
 
 **Goals**:
-- Mock 데이터 50개 기반 프로젝트 전시 (최종 30개)
+- Mock 데이터 30개 기반 프로젝트 전시
 - Glassmorphism 카드형 뷰 구현
 - 다크모드 디폴트 + 라이트/다크 토글
 - 반응형 레이아웃 지원
