@@ -20,17 +20,7 @@
         ]
       }
     ],
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "npx prettier --write \"$CLAUDE_FILE_PATH\" 2>/dev/null || true"
-          }
-        ]
-      }
-    ],
+    "PostToolUse": [],
     "PostCompact": [
       {
         "hooks": [
@@ -81,21 +71,6 @@
     ]
   },
   "permissions": {
-    "allow": [
-      "Bash(pnpm *)",
-      "Bash(npx shadcn*)",
-      "Bash(npx prettier*)",
-      "Bash(npx next*)",
-      "Bash(git log*)",
-      "Bash(git status*)",
-      "Bash(git diff*)",
-      "Bash(git add*)",
-      "Bash(git commit*)",
-      "Bash(git branch*)",
-      "Bash(git checkout*)",
-      "Bash(ls*)",
-      "Bash(mkdir*)"
-    ],
     "deny": [
       "Bash(rm -rf*)",
       "Bash(git push --force*)",

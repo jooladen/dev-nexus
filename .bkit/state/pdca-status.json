@@ -1,9 +1,113 @@
 {
-  "version": "2.0",
-  "lastUpdated": "2026-03-21T08:56:06.090Z",
-  "activeFeatures": [],
-  "primaryFeature": null,
-  "features": {},
+  "version": "3.0",
+  "lastUpdated": "2026-03-21T10:22:54.528Z",
+  "activeFeatures": [
+    "project-showcase",
+    "dev-nexus",
+    "data"
+  ],
+  "primaryFeature": "project-showcase",
+  "features": {
+    "project-showcase": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {
+        "plan": "docs/01-plan/features/project-showcase.plan.md",
+        "design": "docs/02-design/features/project-showcase.design.md"
+      },
+      "timestamps": {
+        "started": "2026-03-21T09:54:43.088Z",
+        "lastUpdated": "2026-03-21T11:00:00.000Z"
+      },
+      "lastFile": "src/components/theme-toggle.tsx",
+      "stateMachine": {
+        "currentState": "do",
+        "previousState": "design",
+        "stateHistory": [
+          "plan",
+          "design"
+        ],
+        "retryCount": 0,
+        "maxRetries": 5,
+        "circuitBreakerOpen": false
+      },
+      "metrics": {
+        "qualityScore": null,
+        "conventionCompliance": null,
+        "apiCompliance": null,
+        "cycleTimeMs": null,
+        "iterationEfficiency": null
+      },
+      "phaseTimestamps": {
+        "plan": "2026-03-21T09:54:43.088Z",
+        "design": "2026-03-21T11:00:00.000Z"
+      },
+      "automationLevel": 2
+    },
+    "dev-nexus": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-21T09:54:43.088Z",
+        "lastUpdated": "2026-03-21T10:22:54.528Z"
+      },
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\dev-nexus\\src\\app\\page.tsx",
+      "stateMachine": {
+        "currentState": "do",
+        "previousState": null,
+        "stateHistory": [],
+        "retryCount": 0,
+        "maxRetries": 5,
+        "circuitBreakerOpen": false
+      },
+      "metrics": {
+        "qualityScore": null,
+        "conventionCompliance": null,
+        "apiCompliance": null,
+        "cycleTimeMs": null,
+        "iterationEfficiency": null
+      },
+      "phaseTimestamps": {},
+      "automationLevel": 2
+    },
+    "data": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-21T09:57:18.088Z",
+        "lastUpdated": "2026-03-21T09:57:18.088Z"
+      },
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\dev-nexus\\src\\data\\projects.ts",
+      "stateMachine": {
+        "currentState": "do",
+        "previousState": null,
+        "stateHistory": [],
+        "retryCount": 0,
+        "maxRetries": 5,
+        "circuitBreakerOpen": false
+      },
+      "metrics": {
+        "qualityScore": null,
+        "conventionCompliance": null,
+        "apiCompliance": null,
+        "cycleTimeMs": null,
+        "iterationEfficiency": null
+      },
+      "phaseTimestamps": {},
+      "automationLevel": 2
+    }
+  },
   "pipeline": {
     "currentPhase": 1,
     "level": "Dynamic",
@@ -12,7 +116,120 @@
   "session": {
     "startedAt": "2026-03-21T08:56:06.090Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-03-21T08:56:06.090Z"
+    "lastActivity": "2026-03-21T10:22:54.528Z"
   },
-  "history": []
+  "history": [
+    {
+      "timestamp": "2026-03-21T09:54:43.088Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T09:54:50.249Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T09:55:10.060Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T09:55:13.948Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T09:55:33.038Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T09:57:18.088Z",
+      "feature": "data",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T09:57:49.290Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T09:57:55.094Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T09:58:16.702Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:22:10.526Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:22:33.974Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:22:40.927Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:22:43.041Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:22:51.514Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:22:52.980Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:22:54.528Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    }
+  ],
+  "stateMachine": {
+    "defaultWorkflow": "default",
+    "activeWorkflows": {},
+    "totalTransitions": 0
+  },
+  "automation": {
+    "globalLevel": 2,
+    "trustScore": 40,
+    "pendingApprovals": 0,
+    "lastGateResult": null
+  },
+  "team": {
+    "enabled": true,
+    "stateFile": ".bkit/runtime/agent-state.json",
+    "eventsFile": ".bkit/runtime/agent-events.jsonl"
+  }
 }

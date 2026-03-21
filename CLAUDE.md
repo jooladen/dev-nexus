@@ -16,7 +16,7 @@ pnpm build        # 프로덕션 빌드
 ## Global Override (전역 규칙 예외)
 
 - **Server Component에서 데이터 직접 fetch 허용** — 전역 "컴포넌트는 데이터를 직접 fetch하지 않는다" 규칙은 Next.js App Router에 적용하지 않음. Server Component에서 `async/await`로 직접 데이터 페칭이 올바른 패턴.
-- **awwwards.com급 디자인** — 전역 규칙 그대로 적용. shadcn/ui 기반으로 세련되게.
+- **다크모드 토글** — 전역 규칙 적용. 디폴트 다크모드 + 라이트/다크 토글 버튼 포함.
 
 ## Project-Specific Rules (전역에 없는 규칙만)
 

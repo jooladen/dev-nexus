@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light theme */
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(148, 163, 184, 0.3);
+  --card-hover: rgba(255, 255, 255, 0.9);
+  --accent: #2563eb;
+  --accent-glow: rgba(37, 99, 235, 0.1);
+  --badge-bg: rgba(37, 99, 235, 0.08);
+  --badge-text: #2563eb;
+  --muted: #94a3b8;
+  --status-completed: #22c55e;
+  --status-in-progress: #eab308;
+  --status-maintained: #3b82f6;
+  --status-archived: #6b7280;
+}
+
+/* Dark theme (default) */
+.dark {
+  --background: #0a0f1e;
+  --foreground: #e2e8f0;
+  --card: rgba(15, 23, 42, 0.6);
+  --card-border: rgba(100, 116, 139, 0.2);
+  --card-hover: rgba(30, 41, 59, 0.8);
+  --accent: #3b82f6;
+  --accent-glow: rgba(59, 130, 246, 0.15);
+  --badge-bg: rgba(59, 130, 246, 0.1);
+  --badge-text: #93c5fd;
+  --muted: #64748b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
+  --color-card-hover: var(--card-hover);
+  --color-accent: var(--accent);
+  --color-accent-glow: var(--accent-glow);
+  --color-badge-bg: var(--badge-bg);
+  --color-badge-text: var(--badge-text);
+  --color-muted: var(--muted);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+}
+
+.glass:hover {
+  background: var(--card-hover);
+  border-color: rgba(100, 116, 139, 0.35);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 0 60px var(--accent-glow);
+}
+
+.dark .glass:hover {
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 60px var(--accent-glow);
+}
