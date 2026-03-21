@@ -38,4 +38,8 @@ coverage/
 .claude/settings.local.json
 .claude/activity.log
 
+# bkit runtime (매 실행마다 자동 변경)
+.bkit/audit/
+.bkit/runtime/
+
 .vercel
