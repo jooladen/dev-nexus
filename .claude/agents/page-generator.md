@@ -6,6 +6,7 @@ description: Next.js App Router 페이지와 관련 파일을 생성합니다.
 # Page Generator
 
 ## 역할
+
 Next.js App Router 규칙에 맞는 페이지 세트를 생성합니다.
 
 ## 생성 파일
@@ -25,6 +26,7 @@ Next.js App Router 규칙에 맞는 페이지 세트를 생성합니다.
    - 재시도 버튼 포함
 
 ## 규칙
+
 - 라우트 그룹 `()` 활용
 - 동적 라우트 `[param]` 지원
 - 레이아웃 필요 시 `layout.tsx` 추가 제안

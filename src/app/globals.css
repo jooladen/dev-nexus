@@ -2,35 +2,31 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Light theme */
+/* Light theme — Cool Slate */
 :root {
-  --background: #f8fafc;
+  --background: #e2e8f0;
   --foreground: #0f172a;
-  --card: rgba(255, 255, 255, 0.7);
-  --card-border: rgba(148, 163, 184, 0.3);
-  --card-hover: rgba(255, 255, 255, 0.9);
-  --accent: #2563eb;
-  --accent-glow: rgba(37, 99, 235, 0.1);
-  --badge-bg: rgba(37, 99, 235, 0.08);
-  --badge-text: #2563eb;
-  --muted: #94a3b8;
-  --status-completed: #22c55e;
-  --status-in-progress: #eab308;
-  --status-maintained: #3b82f6;
-  --status-archived: #6b7280;
+  --card: rgba(255, 255, 255, 0.65);
+  --card-border: rgba(71, 85, 105, 0.15);
+  --card-hover: rgba(255, 255, 255, 0.85);
+  --accent: #1d4ed8;
+  --accent-glow: rgba(29, 78, 216, 0.1);
+  --badge-bg: rgba(29, 78, 216, 0.08);
+  --badge-text: #1e40af;
+  --muted: #64748b;
 }
 
-/* Dark theme (default) */
+/* Dark theme (default) — Deep Blue + Slate */
 .dark {
-  --background: #0a0f1e;
+  --background: #0a1628;
   --foreground: #e2e8f0;
-  --card: rgba(15, 23, 42, 0.6);
-  --card-border: rgba(100, 116, 139, 0.2);
-  --card-hover: rgba(30, 41, 59, 0.8);
-  --accent: #3b82f6;
-  --accent-glow: rgba(59, 130, 246, 0.15);
-  --badge-bg: rgba(59, 130, 246, 0.1);
-  --badge-text: #93c5fd;
+  --card: rgba(15, 30, 56, 0.6);
+  --card-border: rgba(56, 97, 150, 0.2);
+  --card-hover: rgba(22, 42, 74, 0.8);
+  --accent: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.15);
+  --badge-bg: rgba(56, 189, 248, 0.1);
+  --badge-text: #7dd3fc;
   --muted: #64748b;
 }
 
@@ -68,12 +64,13 @@ body {
   background: var(--card-hover);
   border-color: rgba(100, 116, 139, 0.35);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.08),
-    0 0 60px var(--accent-glow);
+    0 8px 24px rgba(15, 23, 42, 0.06),
+    0 0 48px var(--accent-glow);
 }
 
 .dark .glass:hover {
+  border-color: rgba(56, 189, 248, 0.25);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 8px 32px rgba(0, 0, 0, 0.4),
     0 0 60px var(--accent-glow);
 }

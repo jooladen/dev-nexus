@@ -11,37 +11,37 @@ description: Next.js 폼 처리 패턴. Use when creating forms, handling form s
 
 ```tsx
 // lib/schemas/contact.ts
-import { z } from "zod"
+import { z } from "zod";
 
 export const contactSchema = z.object({
   name: z.string().min(1, "이름을 입력하세요"),
   email: z.string().email("올바른 이메일을 입력하세요"),
   message: z.string().min(10, "최소 10자 이상 입력하세요"),
-})
+});
 
-export type ContactFormData = z.infer<typeof contactSchema>
+export type ContactFormData = z.infer<typeof contactSchema>;
 ```
 
 ### 2. Server Action (app/ 또는 lib/actions/)
 
 ```tsx
 // lib/actions/contact.ts
-"use server"
+"use server";
 
-import { contactSchema } from "@/lib/schemas/contact"
+import { contactSchema } from "@/lib/schemas/contact";
 
 export async function submitContact(formData: FormData) {
-  const raw = Object.fromEntries(formData)
-  const result = contactSchema.safeParse(raw)
+  const raw = Object.fromEntries(formData);
+  const result = contactSchema.safeParse(raw);
 
   if (!result.success) {
-    return { error: result.error.flatten().fieldErrors }
+    return { error: result.error.flatten().fieldErrors };
   }
 
   // 비즈니스 로직
-  await saveContact(result.data)
+  await saveContact(result.data);
 
-  return { success: true }
+  return { success: true };
 }
 ```
 
@@ -49,16 +49,16 @@ export async function submitContact(formData: FormData) {
 
 ```tsx
 // components/contact-form.tsx
-"use client"
+"use client";
 
-import { useActionState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { submitContact } from "@/lib/actions/contact"
+import { useActionState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { submitContact } from "@/lib/actions/contact";
 
 export function ContactForm() {
-  const [state, action, pending] = useActionState(submitContact, null)
+  const [state, action, pending] = useActionState(submitContact, null);
 
   return (
     <form action={action} className="space-y-4">
@@ -73,7 +73,7 @@ export function ContactForm() {
         {pending ? "전송 중..." : "전송"}
       </Button>
     </form>
-  )
+  );
 }
 ```
 

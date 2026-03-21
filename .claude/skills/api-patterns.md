@@ -9,29 +9,29 @@ description: Next.js Route Handler API 패턴. Use when creating or modifying AP
 
 ```tsx
 // src/app/api/users/route.ts
-import { NextRequest, NextResponse } from "next/server"
-import { z } from "zod"
+import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
 
 const createUserSchema = z.object({
   name: z.string().min(1),
   email: z.string().email(),
-})
+});
 
 export async function POST(request: NextRequest) {
-  const body = await request.json()
-  const result = createUserSchema.safeParse(body)
+  const body = await request.json();
+  const result = createUserSchema.safeParse(body);
 
   if (!result.success) {
     return NextResponse.json(
       { error: result.error.flatten() },
-      { status: 400 }
-    )
+      { status: 400 },
+    );
   }
 
   // 비즈니스 로직
-  const user = await createUser(result.data)
+  const user = await createUser(result.data);
 
-  return NextResponse.json(user, { status: 201 })
+  return NextResponse.json(user, { status: 201 });
 }
 ```
 

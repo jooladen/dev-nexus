@@ -16,6 +16,7 @@ context: fork
 각 단계 최대 5회 반복. 5회 초과 시 에러 목록 + 시도한 해결책 보고.
 
 ## 최종 보고 형식
+
 ```
 ✅ typecheck: PASS (에러 0)
 ✅ lint: PASS (에러 0, 경고 N)

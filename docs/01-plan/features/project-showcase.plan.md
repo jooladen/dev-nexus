@@ -1,10 +1,10 @@
 # Project Showcase Planning Document
 
-> **Summary**: 20년차 개발자의 50개 프로젝트를 세련된 포트폴리오로 보여주는 메인 페이지
+> **Summary**: 바이브 코딩으로 만든 프로젝트들을 관리하고 방문자에게 재미와 인사이트를 전달하는 포트폴리오
 >
 > **Project**: Dev-Nexus
 > **Date**: 2026-03-21
-> **Status**: Draft
+> **Status**: Final
 
 ---
 
@@ -12,10 +12,10 @@
 
 | Perspective            | Content                                                                    |
 | ---------------------- | -------------------------------------------------------------------------- |
-| **Problem**            | 20년간 쌓인 50개 프로젝트를 이력서 수준의 품질로 한눈에 보여줄 방법이 없음 |
-| **Solution**           | Glassmorphism 기반 카드/그리드 2가지 뷰로 프로젝트를 시각적으로 전시       |
-| **Function/UX Effect** | 카드형(10개)으로 주요 프로젝트 강조 + 그리드형(10개)으로 나머지 밀집 표시  |
-| **Core Value**         | Glassmorphism 기반 세련된 디자인으로 개발자의 기술 역량과 경험을 임팩트 있게 전달 |
+| **Problem**            | 바이브 코딩으로 프로젝트가 계속 늘어나는데 관리하고 보여줄 방법이 없음 |
+| **Solution**           | Glassmorphism 카드로 프로젝트를 시각적으로 전시 + 각 프로젝트의 이유와 인사이트 공유 |
+| **Function/UX Effect** | 카드형(전체)으로 프로젝트 표시, 방문자에게 "왜 만들었는지" 재미 제공 |
+| **Core Value**         | 이력서 보조 + 학습 과정 공유 + 프로젝트 관리를 하나로 해결 |
 
 ---
 
@@ -23,13 +23,13 @@
 
 ### 1.1 Purpose
 
-20년차 개발자의 프로젝트 포트폴리오를 세련된 웹 서비스로 구현. 이력서 대신 URL 하나로 모든 프로젝트를 보여줄 수 있게 함.
+바이브 코딩으로 만든 프로젝트들을 관리하고, 방문자에게 각 프로젝트의 이유와 인사이트를 공유하는 웹 서비스. 이력서 제출 시 보조 자료로 활용.
 
 ### 1.2 Background
 
-- 50개 프로젝트를 텍스트 이력서로 나열하면 임팩트가 없음
-- 기술 스택, 상태, 인사이트를 시각적으로 전달해야 함
-- 채용 담당자/클라이언트에게 첫인상이 중요
+- 바이브 코딩으로 프로젝트가 계속 늘어나 관리 도구가 필요
+- 각 프로젝트를 "왜 만들었는지" 인사이트와 함께 시각적으로 전달
+- 이력서 제출 시 URL 하나로 역량을 보여줄 수 있으면 유리
 
 ---
 
@@ -37,11 +37,10 @@
 
 ### 2.1 In Scope
 
-- [x] Mock JSON 데이터 50개 생성
-- [x] 카드형 뷰 (Glassmorphism, 상단 10개)
-- [x] 그리드형 뷰 (컴팩트, 하단 10개)
+- [x] Mock JSON 데이터 30개 생성
+- [x] 카드형 뷰 (Glassmorphism, 전체 표시)
 - [x] 기술 스택 배지 표시
-- [x] 다크모드 지원
+- [x] 다크모드 디폴트 + 라이트/다크 토글
 - [x] 반응형 레이아웃
 
 ### 2.2 Out of Scope
@@ -59,13 +58,13 @@
 
 | ID    | Requirement                                                              | Priority | Status  |
 | ----- | ------------------------------------------------------------------------ | -------- | ------- |
-| FR-01 | 50개 프로젝트 mock 데이터 (id, 제목, 설명, 스택, 상태, GitHub, 인사이트) | High     | Pending |
-| FR-02 | 카드형 컴포넌트 (Glassmorphism) — 상단 10개                              | High     | Pending |
-| FR-03 | 그리드형 컴포넌트 (컴팩트) — 하단 10개                                   | High     | Pending |
-| FR-04 | 기술 스택 배지 (pill 형태)                                               | High     | Pending |
-| FR-05 | 프로젝트 상태 표시 (completed, in-progress, maintained, archived)        | Medium   | Pending |
-| FR-06 | GitHub 링크 연결                                                         | Medium   | Pending |
-| FR-07 | 다크모드 디폴트 + 라이트/다크 토글 버튼                                    | High     | Pending |
+| FR-01 | 30개 프로젝트 mock 데이터 (id, 제목, 동기, 결과, 기능, 스택, GitHub)     | High     | Done    |
+| FR-02 | 카드형 컴포넌트 (Glassmorphism) — 전체 표시                              | High     | Done    |
+| FR-03 | ~~그리드형 컴포넌트~~ (삭제 — 완료된 프로젝트만 올리므로 불필요)         | ~~High~~ | Removed |
+| FR-04 | 기술 스택 배지 (pill 형태)                                               | High     | Done    |
+| FR-05 | ~~프로젝트 상태 표시~~ (삭제 — 모든 프로젝트가 완료 상태)                | ~~Medium~~ | Removed |
+| FR-06 | GitHub 링크 연결                                                         | Medium   | Done    |
+| FR-07 | 다크모드 디폴트 + 라이트/다크 토글 버튼                                    | High     | Done    |
 
 ### 3.2 Non-Functional Requirements
 
@@ -81,9 +80,9 @@
 
 ### 4.1 Definition of Done
 
-- [x] 메인 페이지에서 카드 10개 + 그리드 10개 렌더링
+- [x] 메인 페이지에서 30개 카드 렌더링
 - [x] Glassmorphism 효과 적용
-- [x] 다크모드 정상 작동
+- [x] 다크/라이트 모드 토글 정상 작동
 - [x] 모바일 반응형 정상
 - [x] typecheck + build 에러 0
 
@@ -112,16 +111,14 @@
 ## 6. Data Schema
 
 ```ts
-type ProjectStatus = "completed" | "in-progress" | "maintained" | "archived";
-
 type Project = {
   id: number;
   title: string;
-  description: string;
+  motivation: string;
+  outcome: string;
+  features: string[];
   techStack: string[];
-  status: ProjectStatus;
   githubUrl: string;
-  insight: string;
 };
 ```
 
@@ -129,9 +126,10 @@ type Project = {
 
 ## 7. Next Steps
 
-1. [x] Design 문서 작성 (`/pdca design project-showcase`)
-2. [ ] 구현
-3. [ ] Gap 분석
+1. [x] Design 문서 작성
+2. [x] 구현
+3. [x] Gap 분석 (100%)
+4. [x] Report 완료
 
 ---
 
@@ -141,3 +139,4 @@ type Project = {
 | ------- | ---------- | ------------- | ------ |
 | 0.1     | 2026-03-21 | Initial draft | Claude |
 | 0.2     | 2026-03-21 | awwwards 참조 제거, 다크모드 토글 버튼 요구사항 추가 | Claude |
+| 0.3     | 2026-03-21 | Final sync: 30개 데이터, 전체 표시, Data Schema 현행화(motivation/outcome/features) | Claude |

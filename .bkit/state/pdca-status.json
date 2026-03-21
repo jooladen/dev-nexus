@@ -1,34 +1,36 @@
 {
   "version": "3.0",
-  "lastUpdated": "2026-03-21T10:22:54.528Z",
+  "lastUpdated": "2026-03-21T11:05:49.445Z",
   "activeFeatures": [
-    "project-showcase",
-    "dev-nexus",
-    "data"
+    "project-showcase"
   ],
   "primaryFeature": "project-showcase",
   "features": {
     "project-showcase": {
-      "phase": "do",
-      "phaseNumber": 3,
-      "matchRate": null,
+      "phase": "completed",
+      "phaseNumber": 6,
+      "matchRate": 100,
       "iterationCount": 0,
       "requirements": [],
       "documents": {
         "plan": "docs/01-plan/features/project-showcase.plan.md",
-        "design": "docs/02-design/features/project-showcase.design.md"
+        "design": "docs/02-design/features/project-showcase.design.md",
+        "analysis": "docs/03-analysis/project-showcase.analysis.md",
+        "report": "docs/04-report/features/project-showcase.report.md"
       },
       "timestamps": {
         "started": "2026-03-21T09:54:43.088Z",
-        "lastUpdated": "2026-03-21T11:00:00.000Z"
+        "lastUpdated": "2026-03-21T11:30:00.000Z"
       },
-      "lastFile": "src/components/theme-toggle.tsx",
+      "lastFile": "docs/04-report/features/project-showcase.report.md",
       "stateMachine": {
-        "currentState": "do",
-        "previousState": "design",
+        "currentState": "completed",
+        "previousState": "check",
         "stateHistory": [
           "plan",
-          "design"
+          "design",
+          "do",
+          "check"
         ],
         "retryCount": 0,
         "maxRetries": 5,
@@ -47,66 +49,6 @@
       },
       "automationLevel": 2
     },
-    "dev-nexus": {
-      "phase": "do",
-      "phaseNumber": 3,
-      "matchRate": null,
-      "iterationCount": 0,
-      "requirements": [],
-      "documents": {},
-      "timestamps": {
-        "started": "2026-03-21T09:54:43.088Z",
-        "lastUpdated": "2026-03-21T10:22:54.528Z"
-      },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\dev-nexus\\src\\app\\page.tsx",
-      "stateMachine": {
-        "currentState": "do",
-        "previousState": null,
-        "stateHistory": [],
-        "retryCount": 0,
-        "maxRetries": 5,
-        "circuitBreakerOpen": false
-      },
-      "metrics": {
-        "qualityScore": null,
-        "conventionCompliance": null,
-        "apiCompliance": null,
-        "cycleTimeMs": null,
-        "iterationEfficiency": null
-      },
-      "phaseTimestamps": {},
-      "automationLevel": 2
-    },
-    "data": {
-      "phase": "do",
-      "phaseNumber": 3,
-      "matchRate": null,
-      "iterationCount": 0,
-      "requirements": [],
-      "documents": {},
-      "timestamps": {
-        "started": "2026-03-21T09:57:18.088Z",
-        "lastUpdated": "2026-03-21T09:57:18.088Z"
-      },
-      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\dev-nexus\\src\\data\\projects.ts",
-      "stateMachine": {
-        "currentState": "do",
-        "previousState": null,
-        "stateHistory": [],
-        "retryCount": 0,
-        "maxRetries": 5,
-        "circuitBreakerOpen": false
-      },
-      "metrics": {
-        "qualityScore": null,
-        "conventionCompliance": null,
-        "apiCompliance": null,
-        "cycleTimeMs": null,
-        "iterationEfficiency": null
-      },
-      "phaseTimestamps": {},
-      "automationLevel": 2
-    }
   },
   "pipeline": {
     "currentPhase": 1,
@@ -116,7 +58,7 @@
   "session": {
     "startedAt": "2026-03-21T08:56:06.090Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-03-21T10:22:54.528Z"
+    "lastActivity": "2026-03-21T11:05:49.445Z"
   },
   "history": [
     {
@@ -211,6 +153,108 @@
     },
     {
       "timestamp": "2026-03-21T10:22:54.528Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:30:07.056Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:30:08.976Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:35:33.816Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:35:46.822Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:35:57.328Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:38:57.162Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:39:04.692Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:45:58.713Z",
+      "feature": "Design 문서 동기화 → 100%",
+      "phase": "act",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:53:52.362Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:53:56.690Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:53:58.543Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T10:56:45.469Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T11:00:14.111Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T11:00:30.909Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T11:05:30.549Z",
+      "feature": "data",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T11:05:46.823Z",
+      "feature": "dev-nexus",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-21T11:05:49.444Z",
       "feature": "dev-nexus",
       "phase": "do",
       "action": "updated"
