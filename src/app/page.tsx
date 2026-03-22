@@ -1,8 +1,15 @@
 import { projects } from "@/data/projects";
-import { ProjectCard } from "@/components/project-card";
+import { ProjectGrid } from "@/components/project-grid";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { Github, Mail } from "lucide-react";
+
+function getTechCount(techStacks: string[][]) {
+  const unique = new Set(techStacks.flat());
+  return unique.size;
+}
 
 export default function Home() {
+  const techCount = getTechCount(projects.map((p) => p.techStack));
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -27,22 +34,38 @@ export default function Home() {
           , 각각의 이유와 인사이트.
         </p>
         <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-accent to-transparent" />
+        <p className="mt-4 text-xs text-muted">
+          {techCount}+ Technologies &middot; {projects.length} Projects &middot;
+          Full-Stack
+        </p>
       </header>
 
-      {/* Featured Cards */}
-      <section>
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-      </section>
+      {/* Project Grid with Filter */}
+      <ProjectGrid projects={projects} />
 
       {/* Footer */}
       <footer className="mt-20 text-center">
         <p className="text-sm text-muted">
           총 {projects.length}개의 프로젝트 &middot; 계속 늘어나는 중
         </p>
+        <div className="mt-4 flex items-center justify-center gap-4">
+          <a
+            href="https://github.com/example"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-lg p-2 text-muted transition-colors hover:text-foreground"
+            aria-label="GitHub 프로필"
+          >
+            <Github className="h-4 w-4" />
+          </a>
+          <a
+            href="mailto:hello@example.com"
+            className="rounded-lg p-2 text-muted transition-colors hover:text-foreground"
+            aria-label="이메일 보내기"
+          >
+            <Mail className="h-4 w-4" />
+          </a>
+        </div>
       </footer>
     </main>
   );

@@ -24,22 +24,22 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           href={project.githubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="shrink-0 rounded-lg p-2 text-muted transition-colors hover:bg-black/5 dark:hover:bg-white/5 hover:text-foreground"
+          className="shrink-0 rounded-lg p-2 text-muted transition-colors hover:bg-black/5 dark:hover:bg-white/5 hover:text-accent"
           aria-label={`${project.title} GitHub 링크`}
         >
           <ExternalLink className="h-4 w-4" />
         </a>
       </div>
 
-      <p className="mb-3 text-sm leading-relaxed text-muted">
+      <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-muted">
         {project.motivation}
       </p>
 
-      <p className="mb-4 text-sm font-medium leading-relaxed text-foreground">
+      <p className="mb-4 line-clamp-1 text-sm font-medium leading-relaxed text-foreground">
         {project.outcome}
       </p>
 
-      <div className="mb-4 flex flex-wrap gap-1.5">
+      <div className="mb-4 min-h-[52px] flex flex-wrap gap-1.5">
         {project.features.map((feature) => (
           <span
             key={feature}
@@ -55,7 +55,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           {project.techStack.map((tech) => (
             <span
               key={tech}
-              className="rounded-full bg-badge-bg px-2.5 py-0.5 text-xs font-medium text-badge-text"
+              className="rounded-full bg-badge-bg px-2.5 py-0.5 text-[11px] font-medium font-mono tracking-wide text-badge-text"
             >
               {tech}
             </span>

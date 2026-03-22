@@ -1,37 +1,28 @@
 {
   "version": "3.0",
-  "lastUpdated": "2026-03-21T11:05:49.445Z",
+  "lastUpdated": "2026-03-22T03:16:47.480Z",
   "activeFeatures": [
-    "project-showcase"
+    "dev-nexus",
+    "ui-improvement"
   ],
-  "primaryFeature": "project-showcase",
+  "primaryFeature": "dev-nexus",
   "features": {
-    "project-showcase": {
-      "phase": "completed",
-      "phaseNumber": 6,
-      "matchRate": 100,
+    "dev-nexus": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
       "iterationCount": 0,
       "requirements": [],
-      "documents": {
-        "plan": "docs/01-plan/features/project-showcase.plan.md",
-        "design": "docs/02-design/features/project-showcase.design.md",
-        "analysis": "docs/03-analysis/project-showcase.analysis.md",
-        "report": "docs/04-report/features/project-showcase.report.md"
-      },
+      "documents": {},
       "timestamps": {
-        "started": "2026-03-21T09:54:43.088Z",
-        "lastUpdated": "2026-03-21T11:30:00.000Z"
+        "started": "2026-03-22T03:07:37.473Z",
+        "lastUpdated": "2026-03-22T03:08:23.474Z"
       },
-      "lastFile": "docs/04-report/features/project-showcase.report.md",
+      "lastFile": "C:\\Users\\jooladen\\Desktop\\cluade-code2\\dev-nexus\\src\\app\\page.tsx",
       "stateMachine": {
-        "currentState": "completed",
-        "previousState": "check",
-        "stateHistory": [
-          "plan",
-          "design",
-          "do",
-          "check"
-        ],
+        "currentState": "do",
+        "previousState": null,
+        "stateHistory": [],
         "retryCount": 0,
         "maxRetries": 5,
         "circuitBreakerOpen": false
@@ -43,220 +34,63 @@
         "cycleTimeMs": null,
         "iterationEfficiency": null
       },
-      "phaseTimestamps": {
-        "plan": "2026-03-21T09:54:43.088Z",
-        "design": "2026-03-21T11:00:00.000Z"
-      },
+      "phaseTimestamps": {},
       "automationLevel": 2
     },
+    "ui-improvement": {
+      "phase": "act",
+      "phaseNumber": 5,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-22T03:16:47.478Z",
+        "lastUpdated": "2026-03-22T03:16:47.479Z"
+      },
+      "previousPhase": "check",
+      "autoAdvanced": true
+    }
   },
   "pipeline": {
     "currentPhase": 1,
-    "level": "Starter",
+    "level": "Dynamic",
     "phaseHistory": []
   },
   "session": {
-    "startedAt": "2026-03-21T08:56:06.090Z",
+    "startedAt": "2026-03-22T03:07:37.473Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-03-21T11:05:49.445Z"
+    "lastActivity": "2026-03-22T03:16:47.480Z"
   },
   "history": [
     {
-      "timestamp": "2026-03-21T09:54:43.088Z",
+      "timestamp": "2026-03-22T03:07:37.473Z",
       "feature": "dev-nexus",
       "phase": "do",
       "action": "updated"
     },
     {
-      "timestamp": "2026-03-21T09:54:50.249Z",
+      "timestamp": "2026-03-22T03:07:50.793Z",
       "feature": "dev-nexus",
       "phase": "do",
       "action": "updated"
     },
     {
-      "timestamp": "2026-03-21T09:55:10.060Z",
+      "timestamp": "2026-03-22T03:08:05.416Z",
       "feature": "dev-nexus",
       "phase": "do",
       "action": "updated"
     },
     {
-      "timestamp": "2026-03-21T09:55:13.948Z",
+      "timestamp": "2026-03-22T03:08:23.474Z",
       "feature": "dev-nexus",
       "phase": "do",
       "action": "updated"
     },
     {
-      "timestamp": "2026-03-21T09:55:33.038Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T09:57:18.088Z",
-      "feature": "data",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T09:57:49.290Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T09:57:55.094Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T09:58:16.702Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:22:10.526Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:22:33.974Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:22:40.927Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:22:43.041Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:22:51.514Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:22:52.980Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:22:54.528Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:30:07.056Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:30:08.976Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:35:33.816Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:35:46.822Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:35:57.328Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:38:57.162Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:39:04.692Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:45:58.713Z",
-      "feature": "Design 문서 동기화 → 100%",
+      "timestamp": "2026-03-22T03:16:47.479Z",
+      "feature": "ui-improvement",
       "phase": "act",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:53:52.362Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:53:56.690Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:53:58.543Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T10:56:45.469Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T11:00:14.111Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T11:00:30.909Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T11:05:30.549Z",
-      "feature": "data",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T11:05:46.823Z",
-      "feature": "dev-nexus",
-      "phase": "do",
-      "action": "updated"
-    },
-    {
-      "timestamp": "2026-03-21T11:05:49.444Z",
-      "feature": "dev-nexus",
-      "phase": "do",
       "action": "updated"
     }
   ],
