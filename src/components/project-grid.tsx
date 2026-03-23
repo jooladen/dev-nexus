@@ -4,6 +4,7 @@ import { useMemo, useState, useCallback } from "react";
 import type { Project } from "@/types/project";
 import { ProjectCard } from "@/components/project-card";
 import { TechFilter } from "@/components/tech-filter";
+import { FadeInOnScroll } from "@/components/motion-wrapper";
 
 const MIN_PROJECT_COUNT = 2;
 
@@ -62,26 +63,26 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
         totalCount={projects.length}
       />
 
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {filteredProjects.length > 0 ? (
-          filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))
-        ) : (
-          <div className="col-span-full py-20 text-center">
-            <p className="text-muted">
-              선택한 기술을 사용한 프로젝트가 없습니다.
-            </p>
-            <button
-              type="button"
-              onClick={handleReset}
-              className="mt-3 text-sm text-accent underline underline-offset-2 hover:text-accent/80 transition-colors cursor-pointer"
-            >
-              필터 초기화
-            </button>
-          </div>
-        )}
-      </div>
+      {filteredProjects.length > 0 ? (
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {filteredProjects.map((project, i) => (
+            <FadeInOnScroll key={project.id} delay={(i % 6) * 0.06}>
+              <ProjectCard project={project} isSelf={project.title === "Dev-Nexus"} />
+            </FadeInOnScroll>
+          ))}
+        </div>
+      ) : (
+        <div className="col-span-full py-20 text-center">
+          <p className="text-muted">선택한 기술을 사용한 프로젝트가 없습니다.</p>
+          <button
+            type="button"
+            onClick={handleReset}
+            className="mt-3 text-sm text-accent underline underline-offset-2 hover:text-accent/80 transition-colors cursor-pointer"
+          >
+            필터 초기화
+          </button>
+        </div>
+      )}
     </section>
   );
 }

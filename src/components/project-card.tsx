@@ -1,25 +1,33 @@
 import type { Project } from "@/types/project";
 import { cn } from "@/lib/utils";
-import { ExternalLink } from "lucide-react";
+import { getTechGradientCSS } from "@/lib/tech-colors";
+import { ExternalLink, Sparkles } from "lucide-react";
 
 type ProjectCardProps = {
   project: Project;
   className?: string;
+  isSelf?: boolean;
 };
 
-export function ProjectCard({ project, className }: ProjectCardProps) {
+export function ProjectCard({ project, className, isSelf }: ProjectCardProps) {
+  const gradientCSS = getTechGradientCSS(project.techStack[0] ?? "");
+
   return (
     <article
       className={cn(
-        "glass group relative flex flex-col rounded-2xl p-6 transition-all duration-500",
-        "hover:-translate-y-1",
+        "glass group relative flex h-full flex-col rounded-2xl p-6 transition-all duration-500",
+        "hover:-translate-y-1 hover:scale-[1.02]",
+        isSelf && "ring-1 ring-accent/30",
         className,
       )}
     >
+      <div className="card-gradient-bar" style={{ background: isSelf ? "linear-gradient(135deg, var(--accent), var(--accent-secondary), #22d3ee)" : gradientCSS }} />
+
       <div className="mb-4 flex items-start justify-between">
-        <h3 className="text-lg font-semibold tracking-tight text-foreground">
-          {project.title}
-        </h3>
+        <div className="flex items-center gap-2">
+          {isSelf && <Sparkles className="h-4 w-4 text-accent" />}
+          <h3 className="text-lg font-bold tracking-tight text-foreground">{project.title}</h3>
+        </div>
         <a
           href={project.githubUrl}
           target="_blank"
@@ -31,20 +39,16 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
         </a>
       </div>
 
-      <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-muted">
-        {project.motivation}
-      </p>
+      {isSelf && (
+        <p className="mb-3 text-xs font-medium text-accent">You are here</p>
+      )}
 
-      <p className="mb-4 line-clamp-1 text-sm font-medium leading-relaxed text-foreground">
-        {project.outcome}
-      </p>
+      <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-muted italic">{project.motivation}</p>
+      <p className="mb-4 line-clamp-1 text-sm font-medium leading-relaxed text-foreground">{project.outcome}</p>
 
-      <div className="mb-4 min-h-[52px] flex flex-wrap gap-1.5">
+      <div className="mb-4 flex flex-wrap gap-1.5">
         {project.features.map((feature) => (
-          <span
-            key={feature}
-            className="rounded-full border border-card-border px-2.5 py-0.5 text-xs text-muted"
-          >
+          <span key={feature} className="rounded-full border border-card-border px-2.5 py-0.5 text-xs text-muted">
             {feature}
           </span>
         ))}
@@ -53,10 +57,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
       <div className="mt-auto border-t border-card-border pt-3">
         <div className="flex flex-wrap gap-1.5">
           {project.techStack.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-full bg-badge-bg px-2.5 py-0.5 text-[11px] font-medium font-mono tracking-wide text-badge-text"
-            >
+            <span key={tech} className="rounded-full bg-badge-bg px-2.5 py-0.5 text-[11px] font-medium font-mono tracking-wide text-badge-text">
               {tech}
             </span>
           ))}
