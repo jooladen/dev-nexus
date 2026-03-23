@@ -39,3 +39,6 @@ coverage/
 .claude/activity.log
 
 .vercel
+
+# playwright mcp
+.playwright-mcp/
