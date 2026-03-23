@@ -1,15 +1,20 @@
-import { projects } from "@/data/projects";
+import { getDb } from "@/db";
+import { projects } from "@/db/schema";
 import { ProjectGrid } from "@/components/project-grid";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Github, Mail } from "lucide-react";
+
+export const dynamic = "force-dynamic";
 
 function getTechCount(techStacks: string[][]) {
   const unique = new Set(techStacks.flat());
   return unique.size;
 }
 
-export default function Home() {
-  const techCount = getTechCount(projects.map((p) => p.techStack));
+export default async function Home() {
+  const db = getDb();
+  const allProjects = await db.select().from(projects);
+  const techCount = getTechCount(allProjects.map((p) => p.techStack));
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -29,24 +34,24 @@ export default function Home() {
         <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted">
           만들고 싶은 걸 만들다 보니 여기까지.{" "}
           <span className="text-foreground font-medium">
-            {projects.length}개 프로젝트
+            {allProjects.length}개 프로젝트
           </span>
           , 각각의 이유와 인사이트.
         </p>
         <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-accent to-transparent" />
         <p className="mt-4 text-xs text-muted">
-          {techCount}+ Technologies &middot; {projects.length} Projects &middot;
+          {techCount}+ Technologies &middot; {allProjects.length} Projects &middot;
           Full-Stack
         </p>
       </header>
 
       {/* Project Grid with Filter */}
-      <ProjectGrid projects={projects} />
+      <ProjectGrid projects={allProjects} />
 
       {/* Footer */}
       <footer className="mt-20 text-center">
         <p className="text-sm text-muted">
-          총 {projects.length}개의 프로젝트 &middot; 계속 늘어나는 중
+          총 {allProjects.length}개의 프로젝트 &middot; 계속 늘어나는 중
         </p>
         <div className="mt-4 flex items-center justify-center gap-4">
           <a

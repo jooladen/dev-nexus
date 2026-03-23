@@ -1,8 +1,12 @@
-import type { Project } from "@/types/project";
+import { config } from "dotenv";
+config({ path: ".env.local" });
 
-export const projects: Project[] = [
+import { neon } from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/neon-http";
+import { projects } from "./schema";
+
+const seedData = [
   {
-    id: 1,
     title: "CloudPay",
     motivation: "매달 수동 정산하는 게 너무 귀찮아서. 엑셀로 3시간씩 걸리던 걸 자동화하고 싶었다.",
     outcome: "정산 시간 3시간 → 10분. 실수도 사라졌다.",
@@ -11,7 +15,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/cloudpay",
   },
   {
-    id: 2,
     title: "AI-DocSearch",
     motivation: "사내 문서가 너무 많아서 찾는 데만 하루가 걸렸다. 자연어로 물어보면 답해주는 걸 만들고 싶었다.",
     outcome: "신입이 온보딩할 때 질문 수가 70% 줄었다.",
@@ -20,7 +23,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/ai-docsearch",
   },
   {
-    id: 3,
     title: "DevOps Dashboard",
     motivation: "배포할 때마다 여러 화면을 왔다갔다하는 게 비효율적이었다.",
     outcome: "배포 상태를 한 화면에서 볼 수 있게 되니까 장애 대응이 빨라졌다.",
@@ -29,7 +31,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/devops-dash",
   },
   {
-    id: 4,
     title: "SmartFarm IoT",
     motivation: "친척 농장에 갔다가 온도·습도를 수첩에 적는 걸 보고 자동화해주고 싶었다.",
     outcome: "센서 데이터가 자동으로 기록되고 이상 시 알림이 온다.",
@@ -38,7 +39,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/smartfarm-iot",
   },
   {
-    id: 5,
     title: "FinTracker",
     motivation: "가계부 앱이 다 불편해서. 내가 원하는 방식으로 지출을 추적하고 싶었다.",
     outcome: "매달 어디서 돈이 새는지 한눈에 보이게 됐다.",
@@ -47,7 +47,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/fintracker",
   },
   {
-    id: 6,
     title: "CodeReview Bot",
     motivation: "PR 리뷰가 밀려서 머지가 늦어지는 게 답답했다. 기본적인 건 봇이 해줬으면 했다.",
     outcome: "리뷰 대기 시간이 평균 2일에서 4시간으로 줄었다.",
@@ -56,7 +55,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/codereview-bot",
   },
   {
-    id: 7,
     title: "MeetingNote AI",
     motivation: "회의 끝나면 누가 뭘 하기로 했는지 기억이 안 났다. 녹음해서 자동 정리하고 싶었다.",
     outcome: "회의록 작성 시간이 0이 됐다. 액션 아이템도 자동 추출.",
@@ -65,7 +63,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/meetingnote-ai",
   },
   {
-    id: 8,
     title: "LogViewer",
     motivation: "서버 로그를 터미널에서 grep하는 게 한계가 있었다. 시각적으로 필터링하고 싶었다.",
     outcome: "장애 원인 파악이 30분에서 5분으로 단축.",
@@ -74,7 +71,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/logviewer",
   },
   {
-    id: 9,
     title: "Portfolio CMS",
     motivation: "포트폴리오를 수정할 때마다 코드를 건드리기 싫었다. 어드민에서 바로 수정하고 싶었다.",
     outcome: "콘텐츠 수정이 배포 없이 가능해졌다.",
@@ -83,7 +79,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/portfolio-cms",
   },
   {
-    id: 10,
     title: "ChatBot Builder",
     motivation: "고객 문의가 반복적이라 챗봇을 만들고 싶었는데, 코딩 없이 만들 수 있는 도구가 필요했다.",
     outcome: "비개발자도 30분 만에 챗봇을 만들 수 있게 됐다.",
@@ -92,7 +87,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/chatbot-builder",
   },
   {
-    id: 11,
     title: "ErrorTracker",
     motivation: "프로덕션 에러를 Sentry 없이 직접 추적하고 싶었다. 학습 목적도 있었다.",
     outcome: "에러 수집·그룹핑·알림을 직접 구현하며 에러 핸들링 이해도가 깊어졌다.",
@@ -101,7 +95,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/errortracker",
   },
   {
-    id: 12,
     title: "MarkdownBlog",
     motivation: "블로그를 직접 만들어보고 싶었다. CMS 없이 마크다운 파일만으로.",
     outcome: "글 쓰기가 편해졌고 SSG 덕에 로딩이 매우 빠르다.",
@@ -110,7 +103,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/markdown-blog",
   },
   {
-    id: 13,
     title: "InvoiceGen",
     motivation: "프리랜서 할 때 인보이스를 매번 한글에서 만드는 게 귀찮았다.",
     outcome: "클라이언트 정보 넣으면 PDF가 자동 생성. 5분이면 끝.",
@@ -119,7 +111,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/invoicegen",
   },
   {
-    id: 14,
     title: "ScreenRecorder",
     motivation: "버그 리포트할 때 화면 녹화가 필요한데 좋은 무료 도구가 없었다.",
     outcome: "브라우저에서 바로 녹화 → GIF/MP4 변환. 설치 불필요.",
@@ -128,7 +119,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/screen-recorder",
   },
   {
-    id: 15,
     title: "ImageOptimizer",
     motivation: "웹사이트 이미지가 너무 커서 로딩이 느렸다. 일괄 최적화 도구가 필요했다.",
     outcome: "이미지 용량 평균 60% 감소. 페이지 로딩 속도 2배 향상.",
@@ -137,7 +127,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/image-optimizer",
   },
   {
-    id: 16,
     title: "NotionClone",
     motivation: "Notion의 블록 에디터가 어떻게 만들어지는지 궁금해서 직접 만들어봤다.",
     outcome: "블록 에디터의 복잡성을 이해했다. 드래그앤드롭이 제일 어려웠다.",
@@ -146,7 +135,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/notion-clone",
   },
   {
-    id: 17,
     title: "URLShortener",
     motivation: "URL 단축 서비스를 만들면서 분산 시스템의 ID 생성을 공부하고 싶었다.",
     outcome: "Snowflake ID 생성기를 직접 구현했다. 충돌 0건.",
@@ -155,7 +143,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/urlshortener",
   },
   {
-    id: 18,
     title: "FormBuilder",
     motivation: "설문조사할 때마다 Google Forms가 답답했다. 내 브랜드에 맞는 폼을 만들고 싶었다.",
     outcome: "커스텀 폼을 5분 만에 만들 수 있게 됐다.",
@@ -164,7 +151,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/formbuilder",
   },
   {
-    id: 19,
     title: "FeatureFlag",
     motivation: "기능을 배포하고 나서 문제가 생기면 롤백하는 게 무서웠다. 토글로 끄고 싶었다.",
     outcome: "배포 없이 기능을 켜고 끌 수 있게 됐다. 점진적 롤아웃도 가능.",
@@ -173,7 +159,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/featureflag",
   },
   {
-    id: 20,
     title: "SocketChat",
     motivation: "WebSocket을 제대로 이해하고 싶어서 실시간 채팅을 처음부터 만들어봤다.",
     outcome: "연결 관리, 하트비트, 재접속 로직을 직접 구현하며 깊이 이해했다.",
@@ -182,7 +167,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/socketchat",
   },
   {
-    id: 21,
     title: "MockAPI",
     motivation: "백엔드 개발이 늦어지면 프론트가 기다려야 했다. 가짜 API가 필요했다.",
     outcome: "프론트와 백엔드가 병렬로 개발 가능해졌다.",
@@ -191,7 +175,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/mockapi",
   },
   {
-    id: 22,
     title: "CSSPlayground",
     motivation: "CSS 속성을 실시간으로 바꿔보면서 배우고 싶었다.",
     outcome: "Grid, Flexbox, Animation을 시각적으로 실험할 수 있는 도구가 됐다.",
@@ -200,7 +183,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/css-playground",
   },
   {
-    id: 23,
     title: "DataPipeline",
     motivation: "데이터 ETL 작업을 매번 스크립트로 하다가 관리가 안 됐다.",
     outcome: "파이프라인을 시각적으로 구성하고 스케줄링. 실패 시 알림.",
@@ -209,7 +191,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/datapipeline",
   },
   {
-    id: 24,
     title: "RegexTester",
     motivation: "정규식을 만들 때 매번 regex101에 가는 게 귀찮아서 오프라인용을 만들었다.",
     outcome: "매칭 그룹을 시각적으로 보여줘서 복잡한 정규식도 이해하기 쉬워졌다.",
@@ -218,7 +199,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/regex-tester",
   },
   {
-    id: 25,
     title: "TimeTracker",
     motivation: "프리랜서 할 때 작업 시간을 정확히 기록하고 싶었다.",
     outcome: "프로젝트별 시간 추적이 자동화. 월말 정산이 편해졌다.",
@@ -227,7 +207,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/timetracker",
   },
   {
-    id: 26,
     title: "SlackBot Toolkit",
     motivation: "슬랙 봇을 만들 때마다 보일러플레이트가 반복돼서 프레임워크를 만들었다.",
     outcome: "새 슬랙 봇을 10분 만에 만들 수 있게 됐다.",
@@ -236,7 +215,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/slackbot-toolkit",
   },
   {
-    id: 27,
     title: "JSONFormatter",
     motivation: "API 응답 JSON이 한 줄로 오면 읽기가 힘들었다.",
     outcome: "붙여넣기하면 트리 뷰로 예쁘게 보여준다. 경로 복사도 가능.",
@@ -245,7 +223,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/json-formatter",
   },
   {
-    id: 28,
     title: "CronBuilder",
     motivation: "cron 표현식을 볼 때마다 헷갈렸다. 시각적으로 만들 수 있으면 좋겠다고 생각했다.",
     outcome: "드롭다운으로 선택하면 cron 표현식이 생성. 다음 실행 시간도 미리보기.",
@@ -254,7 +231,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/cron-builder",
   },
   {
-    id: 29,
     title: "EnvManager",
     motivation: ".env 파일을 팀원끼리 공유하는 게 보안상 찜찜했다. 안전하게 관리하고 싶었다.",
     outcome: "환경변수를 암호화해서 공유. .env 파일이 슬랙에 돌아다니지 않게 됐다.",
@@ -263,7 +239,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/envmanager",
   },
   {
-    id: 30,
     title: "Dev-Nexus",
     motivation: "프로젝트가 계속 늘어나는데 어디에 정리할 데가 없었다. 이력서에 URL 하나만 넣고 싶었다.",
     outcome: "이 사이트 자체가 포트폴리오. 만들면서 Next.js + Tailwind v4도 배웠다.",
@@ -272,3 +247,21 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/dev-nexus",
   },
 ];
+
+async function main() {
+  const sql = neon(process.env.DATABASE_URL!);
+  const db = drizzle({ client: sql });
+
+  console.log("Clearing existing data...");
+  await db.delete(projects);
+
+  console.log("Seeding 30 projects...");
+  await db.insert(projects).values(seedData);
+
+  console.log("Done! Seeded 30 projects.");
+}
+
+main().catch((err) => {
+  console.error("Seed failed:", err);
+  process.exit(1);
+});
